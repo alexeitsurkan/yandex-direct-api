@@ -1,23 +1,21 @@
 <?php
 
+
 namespace directapi\services\adgroups\models;
 
 use directapi\components\Model;
-use Symfony\Component\Validator\Constraints as Assert;
 
-class DynamicTextAdGroupAdd extends Model
+class DynamicTextFeedAdGroupAdd extends Model
 {
     /**
-     * @var string
+     * @var int
      * @Assert\NotBlank()
-     * @Assert\Length(
-     *      max = 100
-     * )
      */
-    public $DomainUrl;
+    public $FeedId;
 
     /**
      * @var array
+     * @Assert\NotBlank()
      */
     public $AutotargetingCategories;
 }

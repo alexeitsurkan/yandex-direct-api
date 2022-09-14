@@ -81,6 +81,11 @@ class AdGroupGetItem extends Model
      */
     public $SmartAdGroup;
 
+    /**
+     * @var TextAdGroupFeedParamsGet
+     */
+    public $TextAdGroupFeedParams;
+
     public function getDescription(): ?string
     {
         return $this->Name;
