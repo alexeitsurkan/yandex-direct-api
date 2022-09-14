@@ -61,6 +61,12 @@ class AdGroupAddItem extends Model
     public $DynamicTextAdGroup;
 
     /**
+     * @var DynamicTextFeedAdGroupAdd
+     * @Assert\Valid()
+     */
+    public $DynamicTextFeedAdGroup;
+
+    /**
      * @var CpmBannerKeywordsAdGroupAdd
      * @Assert\Valid()
      */
