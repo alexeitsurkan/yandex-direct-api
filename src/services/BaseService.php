@@ -275,25 +275,16 @@ abstract class BaseService
      */
     protected function doGet(array $params, string $paramName, string $class): array
     {
-        $result = [[]];
-        while ($response = $this->call('get', $params)) {
-            if (property_exists($response, $paramName) && $response->$paramName !== null) {
-                $result[] = $this->mapArray($response->$paramName, $class);
-            }
-            if (property_exists($response, 'LimitedBy')) {
-                $page = null;
-                if (array_key_exists('Page', $params) && $params['Page'] instanceof LimitOffset) {
-                    $page = $params['Page'];
-                } else {
-                    $page = new LimitOffset();
-                }
-                $page->Offset = $response->LimitedBy;
-                $params['Page'] = $page;
-            } else {
-                break;
-            }
+        $result = [];
+        $response = $this->call('get', $params);
+        if (property_exists($response, $paramName) && $response->$paramName !== null) {
+            $result['response'] = $this->mapArray($response->$paramName, $class);
         }
-        return array_merge(...$result);
+        if (property_exists($response, 'LimitedBy')) {
+            $result['LimitedBy'] = $response->LimitedBy;
+        }
+
+        return $result;
     }
 
     /**
