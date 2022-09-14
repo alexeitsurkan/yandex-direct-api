@@ -54,7 +54,7 @@ class KeywordsService extends BaseService
      * @param KeywordFieldEnum[]        $FieldNames
      * @param LimitOffset|null          $Page
      *
-     * @return KeywordGetItem[]
+     * @return array
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \directapi\exceptions\DirectAccountNotExistException

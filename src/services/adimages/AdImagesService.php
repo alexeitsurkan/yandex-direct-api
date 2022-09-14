@@ -54,7 +54,7 @@ class AdImagesService extends BaseService
      * @param AdImageFieldEnum[]       $FieldNames
      * @param LimitOffset              $Page
      *
-     * @return AdImageGetItem[]
+     * @return array
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \directapi\exceptions\DirectAccountNotExistException

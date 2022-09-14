@@ -67,7 +67,7 @@ class AdGroupsService extends BaseService
      * @param SmartAdGroupFieldEnum[]           $SmartAdGroupFieldNames
      * @param LimitOffset                       $Page
      *
-     * @return AdGroupGetItem[]
+     * @return array
      *
      * @throws Exception
      * @throws GuzzleException

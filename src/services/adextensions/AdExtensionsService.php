@@ -67,7 +67,7 @@ class AdExtensionsService extends BaseService
      * @param CalloutFieldEnum[]            $CalloutFieldNames
      * @param LimitOffset                   $Page
      *
-     * @return AdExtensionGetItem[]
+     * @return array
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \directapi\exceptions\DirectAccountNotExistException

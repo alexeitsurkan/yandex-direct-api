@@ -69,7 +69,7 @@ class BidModifiersService extends BaseService
      * @param SmartAdjustmentFieldEnum[]        $SmartAdAdjustmentFieldNames
      * @param LimitOffset|null                  $Page
      *
-     * @return BidModifierGetItem[]
+     * @return array
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \directapi\exceptions\DirectAccountNotExistException

@@ -11,7 +11,7 @@ class ClientsService extends BaseService
     /**
      * @param ClientFieldEnum[] $FieldNames
      *
-     * @return ClientGetItem[]
+     * @return array
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \directapi\exceptions\DirectAccountNotExistException

@@ -32,7 +32,7 @@ class AgencyClientsService extends BaseService
      * @param ClientFieldEnum[]              $FieldNames
      * @param LimitOffset|null               $Page
      *
-     * @return ClientGetItem[]
+     * @return array
      *
      * @throws GuzzleException
      * @throws DirectAccountNotExistException

@@ -82,7 +82,7 @@ class CampaignsService extends BaseService
      * @param SmartCampaignFieldEnum[]     $SmartCampaignFieldNames
      * @param LimitOffset|null             $Page
      *
-     * @return CampaignGetItem[]
+     * @return array
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \directapi\exceptions\DirectAccountNotExistException

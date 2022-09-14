@@ -34,7 +34,7 @@ class VCardsService extends BaseService
     /**
      * @param $SelectionCriteria
      *
-     * @return array|ActionResult[]
+     * @return array
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \directapi\exceptions\DirectAccountNotExistException

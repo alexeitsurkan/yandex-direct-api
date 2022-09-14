@@ -91,7 +91,7 @@ class AudienceTargetsService extends BaseService
      * @param AudienceTargetFieldEnum[]       $FieldNames
      * @param LimitOffset                     $Page
      *
-     * @return AudienceTargetGetItem[]
+     * @return array
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \directapi\exceptions\DirectAccountNotExistException

@@ -52,7 +52,7 @@ class SitelinksService extends BaseService
      * @param SitelinksSetFieldEnum[] $FieldNames
      * @param LimitOffset             $Page
      *
-     * @return SitelinksSetGetItem[]
+     * @return array
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \directapi\exceptions\DirectAccountNotExistException

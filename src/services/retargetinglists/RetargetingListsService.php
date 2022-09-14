@@ -85,7 +85,7 @@ class RetargetingListsService extends BaseService
      * @param RetargetingListFieldEnum[]       $FieldNames
      * @param LimitOffset                      $Page
      *
-     * @return RetargetingListGetItem[]
+     * @return array
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \directapi\exceptions\DirectAccountNotExistException

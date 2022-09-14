@@ -86,7 +86,7 @@ class AdsService extends BaseService
      * @param SmartAdBuilderAdFieldEnum[]     $SmartAdBuilderAdFieldNames
      * @param LimitOffset                     $Page
      *
-     * @return models\AdGetItem[]
+     * @return array
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \directapi\exceptions\DirectAccountNotExistException
