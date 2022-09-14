@@ -13,6 +13,11 @@ class DynamicTextFeedAdGroupGet extends Model
     public $Source;
 
     /**
+     * @var int
+     */
+    public $FeedId;
+
+    /**
      * @var \directapi\services\adgroups\enum\SourceTypeEnum
      */
     public $SourceType;
@@ -21,4 +26,9 @@ class DynamicTextFeedAdGroupGet extends Model
      * @var \directapi\common\enum\ProcessingStatusEnum
      */
     public $SourceProcessingStatus;
+
+    /**
+     * @var null|array
+     */
+    public $AutotargetingCategories;
 }

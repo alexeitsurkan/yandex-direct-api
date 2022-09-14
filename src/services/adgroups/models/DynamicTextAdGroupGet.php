@@ -16,4 +16,9 @@ class DynamicTextAdGroupGet extends Model
      * @var \directapi\common\enum\ProcessingStatusEnum
      */
     public $DomainUrlProcessingStatus;
+
+    /**
+     * @var null|array
+     */
+    public $AutotargetingCategories;
 }
