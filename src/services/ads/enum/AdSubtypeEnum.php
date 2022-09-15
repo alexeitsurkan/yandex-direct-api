@@ -11,4 +11,5 @@ class AdSubtypeEnum extends Enum
     public const TEXT_AD_BUILDER_AD = 'TEXT_AD_BUILDER_AD';
     public const MOBILE_APP_IMAGE_AD = 'MOBILE_APP_IMAGE_AD';
     public const MOBILE_APP_AD_BUILDER_AD = 'MOBILE_APP_AD_BUILDER_AD';
+    public const MOBILE_APP_CPC_VIDEO_AD_BUILDER_AD = 'MOBILE_APP_CPC_VIDEO_AD_BUILDER_AD';
 }

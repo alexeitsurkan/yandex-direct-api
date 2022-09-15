@@ -82,6 +82,11 @@ class AdGetItem extends Model
     public $MobileAppImageAd;
 
     /**
+     * @var MobileAppCpcVideoAdBuilderAdGet
+     */
+    public $MobileAppCpcVideoAdBuilderAd;
+
+    /**
      * @var TextAdBuilderAdGet
      */
     public $TextAdBuilderAd;

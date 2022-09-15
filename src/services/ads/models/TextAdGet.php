@@ -95,4 +95,21 @@ class TextAdGet extends Model
     {
         return $this->Title;
     }
+
+    /**
+     * @var int
+     */
+    public $TurboPageId;
+
+    /**
+     * @var int
+     */
+    public $BusinessId;
+
+    /**
+     * @var \directapi\common\enum\YesNoEnum
+     * @DirectApiAssert\IsEnum(type="directapi\common\enum\YesNoEnum")
+     */
+    public $PreferVCardOverBusiness;
+
 }

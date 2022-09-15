@@ -4,22 +4,17 @@ namespace directapi\services\ads\models;
 
 use directapi\components\Model;
 
-class TextAdBuilderAdGet extends Model
+class MobileAppCpcVideoAdBuilderAdGet extends Model
 {
     /**
-     * @var AdBuilderAdGetItem
+     * @var AdBuilderAdAddItem
      */
     public $Creative;
 
     /**
      * @var string
      */
-    public $Href;
-
-    /**
-     * @var int
-     */
-    public $TurboPageId;
+    public $TrackingUrl;
 
     public function getDescription(): ?string
     {

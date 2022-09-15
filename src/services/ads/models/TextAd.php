@@ -80,6 +80,22 @@ abstract class TextAd extends Model implements ICallbackValidation
     public $AdExtensionIds;
 
     /**
+     * @var int
+     */
+    public $TurboPageId;
+
+    /**
+     * @var int
+     */
+    public $BusinessId;
+
+    /**
+     * @var \directapi\common\enum\YesNoEnum
+     * @DirectApiAssert\IsEnum(type="directapi\common\enum\YesNoEnum")
+     */
+    public $PreferVCardOverBusiness;
+
+    /**
      * @Assert\Callback()
      *
      * @param ExecutionContextInterface $context
@@ -90,13 +106,15 @@ abstract class TextAd extends Model implements ICallbackValidation
             if (mb_strlen($this->Title) > 35) {
                 $context->buildViolation('Заголовок объявления слишком велик')
                     ->atPath('Title')
-                    ->addViolation();
+                    ->addViolation()
+                ;
             }
         } else {
             if (mb_strlen($this->Title) > 33) {
                 $context->buildViolation('Заголовок объявления слишком велик')
                     ->atPath('Title')
-                    ->addViolation();
+                    ->addViolation()
+                ;
             }
         }
 
@@ -104,13 +122,15 @@ abstract class TextAd extends Model implements ICallbackValidation
             $context->buildViolation('Необходимо указать Href или VCardId')
                 ->atPath('Href')
                 ->atPath('VCardId')
-                ->addViolation();
+                ->addViolation()
+            ;
         }
 
         if (!$this->Href && $this->SitelinkSetId) {
             $context->buildViolation('Нельзя указать SitelinkSetId при пустом Href')
                 ->atPath('SitelinkSetId')
-                ->addViolation();
+                ->addViolation()
+            ;
         }
     }
 }

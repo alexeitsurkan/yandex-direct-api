@@ -15,4 +15,9 @@ class TextAdBuilderAdAdd extends Model
      * @var string
      */
     public $Href;
+
+    /**
+     * @var int
+     */
+    public $TurboPageId;
 }

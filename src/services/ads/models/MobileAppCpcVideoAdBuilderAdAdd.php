@@ -1,11 +1,10 @@
 <?php
 
-
 namespace directapi\services\ads\models;
 
 use directapi\components\Model;
 
-class CpcVideoAdBuilderAdGet extends Model
+class MobileAppCpcVideoAdBuilderAdAdd extends Model
 {
     /**
      * @var AdBuilderAdAddItem
@@ -15,10 +14,5 @@ class CpcVideoAdBuilderAdGet extends Model
     /**
      * @var string
      */
-    public $Href;
-
-    /**
-     * @var int
-     */
-    public $TurboPageId;
+    public $TrackingUrl;
 }

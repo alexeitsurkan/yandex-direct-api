@@ -57,4 +57,9 @@ class MobileAppAdAdd extends Model
      * @var string
      */
     public $AdImageHash;
+
+    /**
+     * @var \directapi\services\adextensions\models\VideoExtensionAddItem
+     */
+    public $VideoExtension;
 }

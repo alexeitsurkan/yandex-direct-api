@@ -20,6 +20,11 @@ class AdAddItem extends Model implements ICallbackValidation
     public $MobileAppAd;
 
     /**
+     * @var MobileAppCpcVideoAdBuilderAdAdd
+     */
+    public $MobileAppCpcVideoAdBuilderAd;
+
+    /**
      * @var DynamicTextAdAdd
      */
     public $DynamicTextAd;

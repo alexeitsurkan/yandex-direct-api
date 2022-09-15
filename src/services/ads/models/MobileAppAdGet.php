@@ -45,4 +45,9 @@ class MobileAppAdGet extends Model
     {
         return $this->Title;
     }
+
+    /**
+     * @var \directapi\services\adextensions\models\VideoExtensionAddItem
+     */
+    public $VideoExtension;
 }
