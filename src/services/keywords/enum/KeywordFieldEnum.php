@@ -21,4 +21,5 @@ class KeywordFieldEnum extends Enum
     public const PRODUCTIVITY = 'Productivity';
     public const STATISTICS_SEARCH = 'StatisticsSearch';
     public const STATISTICS_NETWORK = 'StatisticsNetwork';
+    public const AUTOTARGETING_CATEGORIES = 'AutotargetingCategories';
 }

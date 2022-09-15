@@ -2,6 +2,7 @@
 
 namespace directapi\services\keywords\models;
 
+use directapi\common\models\AutotargetingCategories;
 use directapi\components\Model;
 
 class KeywordGetItem extends Model
@@ -80,4 +81,9 @@ class KeywordGetItem extends Model
     {
         return $this->Keyword;
     }
+
+    /**
+     * @var AutotargetingCategories
+     */
+    public $AutotargetingCategories;
 }

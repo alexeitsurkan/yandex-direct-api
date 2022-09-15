@@ -3,6 +3,7 @@
 
 namespace directapi\services\adgroups\models;
 
+use directapi\common\models\AutotargetingCategories;
 use directapi\components\Model;
 
 class DynamicTextAdGroupGet extends Model
@@ -18,7 +19,7 @@ class DynamicTextAdGroupGet extends Model
     public $DomainUrlProcessingStatus;
 
     /**
-     * @var null|array
+     * @var AutotargetingCategories
      */
     public $AutotargetingCategories;
 }

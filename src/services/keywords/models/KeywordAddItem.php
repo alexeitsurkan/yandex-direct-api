@@ -2,9 +2,8 @@
 
 namespace directapi\services\keywords\models;
 
-use directapi\components\constraints as DirectApiAssert;
+use directapi\common\models\AutotargetingCategories;
 use directapi\components\Model;
-use Symfony\Component\Validator\Constraints as Assert;
 
 class KeywordAddItem extends Model
 {
@@ -54,4 +53,9 @@ class KeywordAddItem extends Model
      * )
      */
     public $UserParam2;
+
+    /**
+     * @var AutotargetingCategories
+     */
+    public $AutotargetingCategories;
 }
