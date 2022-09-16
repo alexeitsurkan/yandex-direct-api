@@ -24,6 +24,7 @@ use directapi\services\dictionaries\DictionariesService;
 use directapi\services\keywordbids\KeywordBidsService;
 use directapi\services\keywords\KeywordsService;
 use directapi\services\keywordsResearch\KeywordsResearchService;
+use directapi\services\negativeKeywordSharedSets\NegativeKeywordSharedSetsService;
 use directapi\services\reports\ReportsService;
 use directapi\services\retargetinglists\RetargetingListsService;
 use directapi\services\sitelinks\SitelinksService;
@@ -178,6 +179,11 @@ class DirectApiService
      * @var DictionariesService
      */
     private $dictionariesService;
+
+    /**
+     * @var NegativeKeywordSharedSetsService
+     */
+    private $negativeKeywordSharedSetsService;
 
     /**
      * @var ValidatorInterface
@@ -414,6 +420,18 @@ class DirectApiService
             $this->dictionariesService = new DictionariesService($this);
         }
         return $this->dictionariesService;
+    }
+
+
+    /**
+     * @return NegativeKeywordSharedSetsService
+     */
+    public function getNegativeKeywordSharedSetsService(): NegativeKeywordSharedSetsService
+    {
+        if (!$this->negativeKeywordSharedSetsService) {
+            $this->negativeKeywordSharedSetsService = new NegativeKeywordSharedSetsService($this);
+        }
+        return $this->negativeKeywordSharedSetsService;
     }
 
     /**
