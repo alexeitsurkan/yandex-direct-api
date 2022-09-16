@@ -10,7 +10,7 @@ use directapi\exceptions\DirectApiException;
 use directapi\exceptions\DirectApiNotEnoughUnitsException;
 use directapi\exceptions\RequestValidationException;
 use directapi\services\adgroups\criterias\AdGroupsSelectionCriteria;
-use directapi\services\adgroups\enum\AdGroupFieldEnum;
+use directapi\services\adgroups\enum\NegativeKeywordSharedSetsFieldEnum;
 use directapi\services\adgroups\enum\DynamicTextAdGroupFieldEnum;
 use directapi\services\adgroups\enum\DynamicTextFeedAdGroupFieldEnum;
 use directapi\services\adgroups\enum\MobileAppAdGroupFieldEnum;
@@ -60,7 +60,7 @@ class AdGroupsService extends BaseService
 
     /**
      * @param AdGroupsSelectionCriteria         $SelectionCriteria
-     * @param AdGroupFieldEnum[]                $FieldNames
+     * @param NegativeKeywordSharedSetsFieldEnum[]                $FieldNames
      * @param MobileAppAdGroupFieldEnum[]       $MobileAppAdGroupFieldNames
      * @param DynamicTextAdGroupFieldEnum[]     $DynamicTextAdGroupFieldNames
      * @param DynamicTextFeedAdGroupFieldEnum[] $DynamicTextFeedAdGroupFieldNames

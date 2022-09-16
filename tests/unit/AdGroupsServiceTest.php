@@ -5,7 +5,7 @@ namespace directapi\tests\unit;
 use directapi\common\criterias\IdsCriteria;
 use directapi\DirectApiService;
 use directapi\services\adgroups\criterias\AdGroupsSelectionCriteria;
-use directapi\services\adgroups\enum\AdGroupFieldEnum;
+use directapi\services\adgroups\enum\NegativeKeywordSharedSetsFieldEnum;
 use directapi\services\adgroups\models\AdGroupAddItem;
 use directapi\services\adgroups\models\AdGroupUpdateItem;
 use PHPUnit\Framework\TestCase;
@@ -50,7 +50,7 @@ class AdGroupsServiceTest extends TestCase
     {
         $SelectionCriteria = new AdGroupsSelectionCriteria;
         $SelectionCriteria->Ids = [DIRECT_GROUP_ID];
-        $response = $this->adGroupsService->get($SelectionCriteria, AdGroupFieldEnum::getValues());
+        $response = $this->adGroupsService->get($SelectionCriteria, NegativeKeywordSharedSetsFieldEnum::getValues());
         $this->assertNotEmpty($response);
 
         var_dump($response);
