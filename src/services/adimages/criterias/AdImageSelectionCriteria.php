@@ -2,7 +2,9 @@
 
 namespace directapi\services\adimages\criterias;
 
-class AdImageSelectionCriteria
+use directapi\components\Model;
+
+class AdImageSelectionCriteria extends Model
 {
     /**
      * @var string[]
