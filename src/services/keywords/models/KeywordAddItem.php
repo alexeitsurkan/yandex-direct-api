@@ -2,7 +2,6 @@
 
 namespace directapi\services\keywords\models;
 
-use directapi\common\models\AutotargetingCategories;
 use directapi\components\Model;
 
 class KeywordAddItem extends Model
@@ -55,7 +54,7 @@ class KeywordAddItem extends Model
     public $UserParam2;
 
     /**
-     * @var AutotargetingCategories
+     * @var \directapi\common\models\AutotargetingCategories
      */
     public $AutotargetingCategories;
 }

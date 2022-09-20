@@ -5,7 +5,7 @@ namespace directapi\common\models;
 class AutotargetingCategories
 {
     /**
-     * @var AutotargetingCategoriesItem[]
+     * @var \directapi\common\models\AutotargetingCategoriesItem[]
      */
     public $Items = [];
 }

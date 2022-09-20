@@ -2,7 +2,9 @@
 
 namespace directapi\common\enum;
 
-class AutotargetingCategoryEnum
+use directapi\components\Enum;
+
+class AutotargetingCategoryEnum extends Enum
 {
     public const EXACT = 'EXACT';
     public const ALTERNATIVE = 'ALTERNATIVE';
