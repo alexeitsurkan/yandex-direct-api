@@ -3,6 +3,8 @@
 namespace directapi\services\keywords\models;
 
 use directapi\components\Model;
+use Symfony\Component\Validator\Constraints as Assert;
+use directapi\components\constraints as DirectApiAssert;
 
 class KeywordAddItem extends Model
 {
