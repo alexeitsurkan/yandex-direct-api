@@ -10,6 +10,7 @@ use directapi\exceptions\DirectApiException;
 use directapi\exceptions\DirectApiNotEnoughUnitsException;
 use directapi\exceptions\RequestValidationException;
 use directapi\services\BaseService;
+use directapi\services\negativeKeywordSharedSets\criterias\NegativeKeywordSharedSetsSelectionCriteria;
 use directapi\services\negativeKeywordSharedSets\enum\NegativeKeywordSharedSetsFieldEnum;
 use directapi\services\negativeKeywordSharedSets\models\NegativeKeywordSharedSetsAddItem;
 use directapi\services\negativeKeywordSharedSets\models\NegativeKeywordSharedSetsGetItem;
@@ -18,7 +19,7 @@ use directapi\services\negativeKeywordSharedSets\models\NegativeKeywordSharedSet
 class NegativeKeywordSharedSetsService extends BaseService
 {
     /**
-     * @param IdsCriteria $SelectionCriteria
+     * @param NegativeKeywordSharedSetsSelectionCriteria $SelectionCriteria
      * @param NegativeKeywordSharedSetsFieldEnum[] $FieldNames
      * @param LimitOffset|null $Page
      * @return array
@@ -27,7 +28,7 @@ class NegativeKeywordSharedSetsService extends BaseService
      * @throws DirectApiNotEnoughUnitsException
      * @throws RequestValidationException
      */
-    public function get(IdsCriteria $SelectionCriteria, array $FieldNames, LimitOffset $Page = null): array
+    public function get(NegativeKeywordSharedSetsSelectionCriteria $SelectionCriteria, array $FieldNames, LimitOffset $Page = null): array
     {
         $params = [
             'SelectionCriteria' => $SelectionCriteria,
