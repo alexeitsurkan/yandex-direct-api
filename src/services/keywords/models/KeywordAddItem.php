@@ -56,7 +56,7 @@ class KeywordAddItem extends Model
     public $UserParam2;
 
     /**
-     * @var \directapi\common\models\AutotargetingCategories
+     * @var \directapi\common\models\AutotargetingCategoriesItem[]
      */
     public $AutotargetingCategories;
 }
