@@ -19,7 +19,7 @@ use directapi\services\negativeKeywordSharedSets\models\NegativeKeywordSharedSet
 class NegativeKeywordSharedSetsService extends BaseService
 {
     /**
-     * @param NegativeKeywordSharedSetsSelectionCriteria $SelectionCriteria
+     * @param NegativeKeywordSharedSetsSelectionCriteria|null $SelectionCriteria
      * @param NegativeKeywordSharedSetsFieldEnum[] $FieldNames
      * @param LimitOffset|null $Page
      * @return array
@@ -28,7 +28,7 @@ class NegativeKeywordSharedSetsService extends BaseService
      * @throws DirectApiNotEnoughUnitsException
      * @throws RequestValidationException
      */
-    public function get(NegativeKeywordSharedSetsSelectionCriteria $SelectionCriteria, array $FieldNames, LimitOffset $Page = null): array
+    public function get(?NegativeKeywordSharedSetsSelectionCriteria $SelectionCriteria, array $FieldNames, LimitOffset $Page = null): array
     {
         $params = [
             'SelectionCriteria' => $SelectionCriteria,
