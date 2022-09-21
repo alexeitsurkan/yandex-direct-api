@@ -3,6 +3,7 @@
 namespace directapi\services\negativeKeywordSharedSets\models;
 
 use directapi\components\Model;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class NegativeKeywordSharedSetsAddItem extends Model
 {
