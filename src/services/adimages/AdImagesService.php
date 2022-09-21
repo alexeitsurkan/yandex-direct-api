@@ -72,7 +72,7 @@ class AdImagesService extends BaseService
             $params['Page'] = $Page;
         }
 
-        return parent::doGet($params, 'IdImage', AdImageGetItem::class);
+        return parent::doGet($params, 'IdImages', AdImageGetItem::class);
     }
 
     /**
