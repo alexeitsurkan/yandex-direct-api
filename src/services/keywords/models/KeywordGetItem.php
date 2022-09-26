@@ -82,7 +82,7 @@ class KeywordGetItem extends Model
     }
 
     /**
-     * @var \directapi\common\models\AutotargetingCategories
+     * @var \directapi\common\models\AutotargetingCategories|null
      */
     public $AutotargetingCategories;
 }
