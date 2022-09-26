@@ -32,7 +32,7 @@ class AdGroupGetItem extends Model
     public $NegativeKeywords;
 
     /**
-     * @var \directapi\common\containers\ArrayOfInteger
+     * @var \directapi\common\containers\ArrayOfInteger|null
      */
     public $NegativeKeywordSharedSetIds;
 
@@ -62,17 +62,17 @@ class AdGroupGetItem extends Model
     public $Subtype;
 
     /**
-     * @var MobileAppAdGroupGet
+     * @var MobileAppAdGroupGet|null
      */
     public $MobileAppAdGroup;
 
     /**
-     * @var DynamicTextAdGroupGet
+     * @var DynamicTextAdGroupGet|null
      */
     public $DynamicTextAdGroup;
 
     /**
-     * @var DynamicTextFeedAdGroupGet
+     * @var DynamicTextFeedAdGroupGet|null
      */
     public $DynamicTextFeedAdGroup;
 
@@ -82,7 +82,7 @@ class AdGroupGetItem extends Model
     public $SmartAdGroup;
 
     /**
-     * @var TextAdGroupFeedParamsGet
+     * @var TextAdGroupFeedParamsGet|null
      */
     public $TextAdGroupFeedParams;
 

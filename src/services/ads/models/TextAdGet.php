@@ -42,7 +42,7 @@ class TextAdGet extends Model
     public $DisplayUrlPathModeration;
 
     /**
-     * @var \directapi\common\enum\YesNoEnum
+     * @var \directapi\common\enum\YesNoEnum|null
      */
     public $Mobile;
 
@@ -82,12 +82,12 @@ class TextAdGet extends Model
     public $AdExtensions;
 
     /**
-     * @var \directapi\services\adextensions\models\VideoExtensionGetItem
+     * @var \directapi\services\adextensions\models\VideoExtensionGetItem|null
      */
     public $VideoExtension;
 
     /**
-     * @var \directapi\services\adextensions\models\PriceExtensionGetItem
+     * @var \directapi\services\adextensions\models\PriceExtensionGetItem|null
      */
     public $PriceExtension;
 
