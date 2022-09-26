@@ -275,7 +275,9 @@ abstract class BaseService
      */
     protected function doGet(array $params, string $paramName, string $class): array
     {
-        $result = [];
+        $result = [
+            'response' => []
+        ];
         $response = $this->call('get', $params);
         if (property_exists($response, $paramName) && $response->$paramName !== null) {
             $result['response'] = $this->mapArray($response->$paramName, $class);
