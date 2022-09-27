@@ -83,6 +83,14 @@ class DirectApiService
     /**
      * @var string
      */
+    private $agencyToken;
+
+    /** @var bool */
+    private $useAgencyToken = false;
+
+    /**
+     * @var string
+     */
     private $clientLogin;
 
     /**
@@ -205,12 +213,14 @@ class DirectApiService
         ?string $clientLogin = null,
         ?IQueryLogger $queryLogger = null,
         ?LoggerInterface $logger = null,
-        bool $useSandbox = false
+        bool $useSandbox = false,
+        ?string $agencyToken = null
     ) {
         $this->token = $token;
         $this->clientLogin = $clientLogin;
         $this->logger = new DirectApiLogger($queryLogger, $logger);
         $this->useSandbox = $useSandbox;
+        $this->agencyToken = $agencyToken;
     }
 
     /**
@@ -568,10 +578,15 @@ class DirectApiService
                 );
             }
             if ((int)$data->error->error_code === self::ERROR_CODE_NOT_ENOUGH_UNITS) {
-                throw new DirectApiNotEnoughUnitsException(
-                    $data->error->error_string . ' ' . $data->error->error_detail . ' (' . $request->service . ', ' . $request->method . ')',
-                    $data->error->error_code
-                );
+                if($this->agencyToken !== null && $this->useAgencyToken === false){
+                    $this->useAgencyToken = true;
+                    return $this->getResponse($request);
+                }else{
+                    throw new DirectApiNotEnoughUnitsException(
+                        $data->error->error_string . ' ' . $data->error->error_detail . ' (' . $request->service . ', ' . $request->method . ')',
+                        $data->error->error_code
+                    );
+                }
             }
             if ((int)$data->error->error_code === self::ERROR_CODE_LOGIN_IS_USED_ALREADY) {
                 throw new LoginIsUsedAlreadyException(
@@ -618,6 +633,11 @@ class DirectApiService
         if ($this->clientLogin && $sendClientLogin) {
             $headers['Client-Login'] = $this->clientLogin;
         }
+        if($this->useAgencyToken){
+            $headers['Use-Operator-Units'] = 'true';
+            $headers['Authorization'] = 'Bearer '. $this->agencyToken;
+        }
+
         return $headers;
     }
 
