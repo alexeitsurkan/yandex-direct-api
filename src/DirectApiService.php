@@ -712,33 +712,45 @@ class DirectApiService
 
     /**
      * @param string $token
+     * @return $this
      */
-    public function setToken(string $token): void
+    public function setToken(string $token): self
     {
         $this->token = $token;
+
+        return $this;
     }
 
     /**
      * @param string $clientLogin
+     * @return $this
      */
-    public function setClientLogin(string $clientLogin): void
+    public function setClientLogin(string $clientLogin): self
     {
         $this->clientLogin = $clientLogin;
+
+        return $this;
     }
 
     /**
      * @param bool $useSandbox
+     * @return $this
      */
-    public function setUseSandbox(bool $useSandbox): void
+    public function setUseSandbox(bool $useSandbox): self
     {
         $this->useSandbox = $useSandbox;
+
+        return $this;
     }
 
     /**
      * @param DirectApiLogger $logger
+     * @return $this
      */
-    public function setLogger(DirectApiLogger $logger): void
+    public function setLogger(DirectApiLogger $logger): self
     {
         $this->logger = $logger;
+
+        return $this;
     }
 }
