@@ -90,4 +90,9 @@ class ClientGetItem extends Model
      * @var float
      */
     public $VatRate;
+
+    /**
+     * @var BonusesGet
+     */
+    public $Bonuses;
 }
