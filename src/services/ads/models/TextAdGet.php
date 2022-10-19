@@ -7,7 +7,7 @@ use directapi\components\Model;
 class TextAdGet extends Model
 {
     /**
-     * @var string
+     * @var string|null
      */
     public $Title;
 
@@ -22,7 +22,7 @@ class TextAdGet extends Model
     public $Text;
 
     /**
-     * @var string
+     * @var string|null
      */
     public $Href;
 
@@ -97,7 +97,7 @@ class TextAdGet extends Model
     }
 
     /**
-     * @var int
+     * @var int|null
      */
     public $TurboPageId;
 
