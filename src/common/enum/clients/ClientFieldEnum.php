@@ -15,6 +15,7 @@ class ClientFieldEnum extends Enum
     public const CURRENCY = 'Currency';
     public const GRANTS = 'Grants';
     public const LOGIN = 'Login';
+    public const BONUSES = 'Bonuses';
     public const NOTIFICATION = 'Notification';
     public const OVERDRAFT_SUM_AVAILABLE = 'OverdraftSumAvailable';
     public const PHONE = 'Phone';
