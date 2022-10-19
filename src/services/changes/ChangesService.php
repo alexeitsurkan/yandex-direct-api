@@ -12,7 +12,7 @@ use directapi\services\changes\models\CheckResponse;
 class ChangesService extends BaseService
 {
     /**
-     * @param string $Timestamp
+     * @param string|null $Timestamp
      *
      * @return CheckDictionariesResponse
      *
@@ -23,7 +23,7 @@ class ChangesService extends BaseService
      * @throws \directapi\exceptions\DirectApiNotEnoughUnitsException
      * @throws \directapi\exceptions\RequestValidationException
      */
-    public function checkDictionaries($Timestamp): CheckDictionariesResponse
+    public function checkDictionaries(string $Timestamp = null): CheckDictionariesResponse
     {
         $params = [
             'Timestamp' => $Timestamp
