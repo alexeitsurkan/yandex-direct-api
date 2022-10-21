@@ -148,6 +148,11 @@ abstract class BaseService
         ],
     ];
 
+    public function getLimit(string $method)
+    {
+        return self::$objectLimits[$this->getName()][$method];
+    }
+
     /**
      * @var bool
      */
