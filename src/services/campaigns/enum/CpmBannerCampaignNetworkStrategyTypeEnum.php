@@ -12,5 +12,7 @@ class CpmBannerCampaignNetworkStrategyTypeEnum extends Enum
     public const WB_DECREASED_PRICE_FOR_REPEATED_IMPRESSIONS = 'WB_DECREASED_PRICE_FOR_REPEATED_IMPRESSIONS';
     public const CP_MAXIMUM_IMPRESSIONS = 'CP_MAXIMUM_IMPRESSIONS';
     public const WB_MAXIMUM_IMPRESSIONS = 'WB_MAXIMUM_IMPRESSIONS';
+    public const CP_AVERAGE_CPV = 'CP_AVERAGE_CPV';
+    public const WB_AVERAGE_CPV = 'WB_AVERAGE_CPV';
     public const UNKNOWN = 'UNKNOWN';
 }
