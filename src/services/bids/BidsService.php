@@ -2,6 +2,7 @@
 
 namespace directapi\services\bids;
 
+use directapi\common\criterias\LimitOffset;
 use directapi\common\results\ActionResult;
 use directapi\services\BaseService;
 use directapi\services\bids\criterias\BidsSelectionCriteria;
@@ -16,7 +17,7 @@ class BidsService extends BaseService
     /**
      * @param BidsSelectionCriteria $SelectionCriteria
      * @param BidFieldEnum[]        $FieldNames
-     *
+     * @param LimitOffset|null      $Page
      * @return BidGetItem[]
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -25,12 +26,17 @@ class BidsService extends BaseService
      * @throws \directapi\exceptions\DirectApiNotEnoughUnitsException
      * @throws \directapi\exceptions\RequestValidationException
      */
-    public function get(BidsSelectionCriteria $SelectionCriteria, array $FieldNames): array
+    public function get(BidsSelectionCriteria $SelectionCriteria, array $FieldNames, LimitOffset $Page = null): array
     {
         $params = [
             'SelectionCriteria' => $SelectionCriteria,
             'FieldNames'        => $FieldNames
         ];
+
+        if ($Page) {
+            $params['Page'] = $Page;
+        }
+
         return $this->doGet($params, 'Bids', BidGetItem::class);
     }
 
