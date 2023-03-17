@@ -3,6 +3,7 @@
 namespace directapi\services\reports\models;
 
 use directapi\common\enum\YesNoEnum;
+use directapi\services\reports\enum\ReportAttributionModelEnum;
 use directapi\services\reports\enum\ReportDateRangeTypeEnum;
 use directapi\services\reports\enum\ReportFieldsEnum;
 use directapi\services\reports\enum\ReportFormatsEnum;
@@ -15,6 +16,16 @@ class ReportDefinition implements JsonSerializable
      * @var ReportSelectionCriteria Критерии отбора данных для отчета
      */
     public $SelectionCriteria;
+
+    /**
+     * @var string[] Идентификаторы целей Яндекс Метрики, по которым требуется получить статистику
+     */
+    public $Goals;
+
+    /**
+     * @var ReportAttributionModelEnum[] Модели атрибуции, используемые при расчете данных по целям Яндекс Метрики
+     */
+    public $AttributionModels;
 
     /**
      * @var ReportFieldsEnum[] Имена полей (столбцов), которые будут присутствовать в отчете.
@@ -71,6 +82,8 @@ class ReportDefinition implements JsonSerializable
      *
      * @param ReportSelectionCriteria        $selectionCriteria
      * @param array                          $fieldNames
+     * @param string[]                       $goals
+     * @param array                          $attributionModels
      * @param string                         $reportName
      * @param ReportTypesEnum|string         $reportType
      * @param ReportDateRangeTypeEnum|string $dateRangeType
@@ -80,6 +93,8 @@ class ReportDefinition implements JsonSerializable
      */
     public function __construct(
         ReportSelectionCriteria $selectionCriteria,
+        array $goals,
+        array $attributionModels,
         array $fieldNames,
         $reportName,
         $reportType,
@@ -89,6 +104,8 @@ class ReportDefinition implements JsonSerializable
         $includeDiscount
     ) {
         $this->SelectionCriteria = $selectionCriteria;
+        $this->Goals = $goals;
+        $this->AttributionModels = $attributionModels;
         $this->FieldNames = $fieldNames;
         $this->ReportName = $reportName;
         $this->ReportType = $reportType;
@@ -138,6 +155,8 @@ class ReportDefinition implements JsonSerializable
     {
         $data = [
             'SelectionCriteria' => $this->SelectionCriteria,
+            'Goals'             => $this->Goals,
+            'AttributionModels' => $this->AttributionModels,
             'FieldNames'        => $this->FieldNames,
             'ReportName'        => $this->ReportName,
             'ReportType'        => $this->ReportType,

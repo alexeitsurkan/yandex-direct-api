@@ -306,4 +306,9 @@ class ReportFieldsEnum extends Enum
      * Дата начала года, в формате YYYY-MM-DD.
      */
     public const YEAR = 'Year';
+
+    /**
+     * Прибыль. Рассчитывается как суммарный доход по целям минус стоимость кликов.
+     */
+    public const PROFIT = 'Profit';
 }
