@@ -27,7 +27,7 @@ class Report
     public $fieldNames;
 
     /**
-     * @var ReportRow[] Данные
+     * @var \stdClass[] Данные
      */
     public $rows = [];
 
@@ -39,7 +39,7 @@ class Report
         $this->fieldNames = $fieldNames;
     }
 
-    public function addRow(ReportRow $row): void
+    public function addRow(\stdClass $row): void
     {
         $this->rows[] = $row;
     }

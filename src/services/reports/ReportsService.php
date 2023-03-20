@@ -218,9 +218,7 @@ class ReportsService extends BaseService
                 $rowData->$columnName = $column;
             }
 
-            $row = new ReportRow();
-            $mapper->map($rowData, $row);
-            $report->addRow($row);
+            $report->addRow($rowData);
         }
         return $report;
     }
