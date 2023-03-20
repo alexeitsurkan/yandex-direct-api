@@ -215,7 +215,7 @@ class ReportsService extends BaseService
             $rowData = new \stdClass();
             foreach ($columns as $k => $column) {
                 $columnName = $names[$k];
-                $rowData->$columnName = $column;
+                $rowData->$columnName = $column == '--'?null:$column;
             }
 
             $report->addRow($rowData);
