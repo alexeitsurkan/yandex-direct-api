@@ -91,7 +91,9 @@ class ReportsService extends BaseService
                         } catch (BadResponseException $ex) {
                             $this->badResponseExceptionAnswer($ex);
                         }
-                    } else {
+                    } elseif($errorCode === 56){ //Превышен лимит запросов метода
+                        sleep(5);
+                    }else {
                         $this->service->logger->debug('Error ' . $errorCode . '. Retry');
                         throw new DirectApiException($ex->getMessage(), $ex->getCode());
                     }
@@ -101,17 +103,19 @@ class ReportsService extends BaseService
             } catch (BadResponseException $ex) {
                 $this->badResponseExceptionAnswer($ex);
             }
-            $code = $result->getStatusCode();
-            if ($code === 201 || $code === 202) {
-                //wait
-                $header = $result->getHeader('retryIn');
-                $retryIn = $header ? (int)$header[0] : 5;
-                $this->service->logger->debug("Response: {$code}. Retry in: {$retryIn}");
-                if ($retryIn > 0) {
-                    sleep($retryIn);
+            if($result !== null){
+                $code = $result->getStatusCode();
+                if ($code === 201 || $code === 202) {
+                    //wait
+                    $header = $result->getHeader('retryIn');
+                    $retryIn = $header ? (int)$header[0] : 5;
+                    $this->service->logger->debug("Response: {$code}. Retry in: {$retryIn}");
+                    if ($retryIn > 0) {
+                        sleep($retryIn);
+                    }
+                } elseif ($code !== 200) {
+                    throw new ReportUnknownResponseCodeException($code);
                 }
-            } elseif ($code !== 200) {
-                throw new ReportUnknownResponseCodeException($code);
             }
         }
 
