@@ -91,7 +91,10 @@ class ReportsService extends BaseService
                         } catch (BadResponseException $ex) {
                             $this->badResponseExceptionAnswer($ex);
                         }
-                    } elseif($errorCode === 56){ //Превышен лимит запросов метода
+                    } elseif(
+                        $errorCode === 56 || //Превышен лимит запросов метода
+                        $errorCode === 9000 //Превышено ограничение на размер очереди
+                    ){
                         sleep(5);
                     }else {
                         $this->service->logger->debug('Error ' . $errorCode . '. Retry');
