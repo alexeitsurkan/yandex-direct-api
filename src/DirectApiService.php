@@ -573,7 +573,7 @@ class DirectApiService
             $this->logger->logRequest($request, $response);
             if ((int)$data->error->error_code === self::ERROR_CODE_NOT_EXIST_DIRECT_ACCOUNT) {
                 throw new DirectAccountNotExistException(
-                    $data->error->error_string . ' ' . $data->error->error_detail . ' (' . $request->service . ', ' . $request->method . ')',
+                    $data->error->error_string . ': ' . $data->error->error_detail . ' (' . $request->service . ', ' . $request->method . ')',
                     $data->error->error_code
                 );
             }
@@ -583,19 +583,19 @@ class DirectApiService
                     return $this->getResponse($request);
                 }else{
                     throw new DirectApiNotEnoughUnitsException(
-                        $data->error->error_string . ' ' . $data->error->error_detail . ' (' . $request->service . ', ' . $request->method . ')',
+                        $data->error->error_string . ': ' . $data->error->error_detail . ' (' . $request->service . ', ' . $request->method . ')',
                         $data->error->error_code
                     );
                 }
             }
             if ((int)$data->error->error_code === self::ERROR_CODE_LOGIN_IS_USED_ALREADY) {
                 throw new LoginIsUsedAlreadyException(
-                    $data->error->error_string . ' ' . $data->error->error_detail . ' (' . $request->service . ', ' . $request->method . ')',
+                    $data->error->error_string . ': ' . $data->error->error_detail . ' (' . $request->service . ', ' . $request->method . ')',
                     $data->error->error_code
                 );
             }
             throw new DirectApiException(
-                $data->error->error_string . ' ' . $data->error->error_detail . ' (' . $request->service . ', ' . $request->method . ')',
+                $data->error->error_string . ': ' . $data->error->error_detail . ' (' . $request->service . ', ' . $request->method . ')',
                 $data->error->error_code
             );
         }
