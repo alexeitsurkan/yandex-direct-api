@@ -83,7 +83,7 @@ class ReportsService extends BaseService
             } catch (DirectApiException $ex) {
                 if ($ex->response) {
                     $exResp = json_decode($ex->response, true);
-                    $errorCode = (int)$exResp['error']['error_code'];
+                    $errorCode = (int)($exResp['error']['error_code']??0);
                     if ($errorCode === 500) {
                         try {
                             $this->service->logger->debug('Error 500. Retry');
